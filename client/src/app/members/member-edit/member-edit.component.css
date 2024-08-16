@@ -1,4 +1,4 @@
-/* .img-thumbnail {
+.img-thumbnail {
   margin: 25px;
   width: 85%;
   height: 85%;
@@ -12,4 +12,8 @@
   padding: 10px 15px;
   background-color: #fff;
   border-top: none;
-} */
+}
+
+.textarea-custom-height {
+  min-height: 170px;
+}

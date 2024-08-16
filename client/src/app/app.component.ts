@@ -1,14 +1,21 @@
 import { NgFor } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavComponent } from './nav/nav.component';
+import { NgxSpinnerComponent } from 'ngx-spinner';
 import { AccountService } from './_services/account.service';
 import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NavComponent, HomeComponent],
+  imports: [
+    RouterOutlet,
+    NgFor,
+    NavComponent,
+    HomeComponent,
+    NgxSpinnerComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
