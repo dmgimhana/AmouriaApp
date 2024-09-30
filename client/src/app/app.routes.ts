@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './_guards/auth.guard';
 import { preventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
+import { memberDetailedResolver } from './_resolvers/member-detailed.resolver';
 import { TestErrorsComponent } from './error/test-errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -19,7 +20,11 @@ export const routes: Routes = [
     canActivate: [authGuard],
     children: [
       { path: 'members', component: MemberListComponent },
-      { path: 'members/:username', component: MemberDetailsComponent },
+      {
+        path: 'members/:username',
+        component: MemberDetailsComponent,
+        resolve: { member: memberDetailedResolver },
+      },
       {
         path: 'member/edit',
         component: MemberEditComponent,
