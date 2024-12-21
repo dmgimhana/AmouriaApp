@@ -20,5 +20,13 @@ public interface IMessageRepository
 
     Task<bool> SaveAllAsync();
 
+    void AddGroup(Group group);
 
+    void RemoveConnection(Connection connection);
+
+    Task<Connection?> GetConnection(string ConnectionId);
+
+    Task<Group?> GetMessageGroup(string groupName);
+
+    Task<Group?> GetGroupForConnection(string connectionId);
 }
